@@ -1,9 +1,6 @@
-
-void setup()
-{
-size (400,400);
+void setup(){
+  //some of your code here
 }
 void draw(){
-background(#6AE2FF);
-fill(188,191,193);
-ellipse (200,100,100,100);}
+  //more of your code here
+}
