@@ -17,8 +17,14 @@ noFill();
 beginShape () ;
 curveVertex (180,80);
 curveVertex (180,80) ;
-curveVertex (185, 75);
-curveVertex (190,80) ;
-curveVertex (190,80) ;
+curveVertex (186.5, 75);
+curveVertex (193,80) ;
+curveVertex (193,80) ;
 endShape ();
+beginShape () ;
+curveVertex (207,80);
+curveVertex(207,80);
+curveVertex(213.5,75);
+curveVertex(220,80);
+curveVertex(220,80);
 }
