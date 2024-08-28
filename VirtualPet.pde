@@ -27,4 +27,8 @@ curveVertex(207,80);
 curveVertex(213.5,75);
 curveVertex(220,80);
 curveVertex(220,80);
+endShape ();
+fill(#312116);
+ellipse(186.5,90,15,17.5);
+ellipse(213.5,90,15,17.5);
 }
