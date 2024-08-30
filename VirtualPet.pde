@@ -31,4 +31,11 @@ endShape ();
 fill(#312116);
 ellipse(186.5,90,15,17.5);
 ellipse(213.5,90,15,17.5);
+fill(#ffffff);
+ellipse(188,85,7,7);
+ellipse (215,85,7,7);
+fill(#312116);
+ellipse(200,100,10,20);
+fill(#FFBFED);
+ellipse(200,110,20,10);
 }
