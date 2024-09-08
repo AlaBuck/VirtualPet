@@ -1,0 +1,101 @@
+import processing.serial.*;
+import cc.arduino.*;
+Arduino arduino;
+
+public void setup() {
+  background (#A7E8FF);
+  size (400,300);
+  arduino = new Arduino(this, Arduino.list()[0], 57600); //change the [0] to a [1] or [2] etc. if your program doesn't work
+}
+
+public void mouth_draw (float mouth_scale) {
+  fill(#FFBFED);
+  ellipse(200,125,20+20*mouth_scale,10+10*mouth_scale);
+}
+
+public void koala_draw() {
+  fill (#bcbfc1) ;
+  ellipse(200,180,100,100);
+  ellipse (160,75,50,40);
+  fill (#FDD1FF) ;
+  ellipse (160,75,25,30);
+  fill (#bcbfc1);
+  ellipse (240,75,50,40);
+  fill (#FDD1FF);
+  ellipse (240,75,25,30);
+  fill (#bcbfc1);
+  ellipse (200,100,100,100) ;
+  noFill();
+  beginShape () ;
+  curveVertex (180,80);
+  curveVertex (180,80) ;
+  curveVertex (186.5, 75);
+  curveVertex (193,80) ;
+  curveVertex (193,80) ;
+  endShape ();
+  beginShape () ;
+  curveVertex (207,80);
+  curveVertex(207,80);
+  curveVertex(213.5,75);
+  curveVertex(220,80);
+  curveVertex(220,80);
+  endShape ();
+  fill(#312116);
+  ellipse(186.5,90,15,17.5);
+  ellipse(213.5,90,15,17.5);
+  fill(#ffffff);
+  ellipse(188,85,7,7);
+  ellipse (215,85,7,7);
+  fill(#312116);
+  ellipse(200,100,10,20);
+  fill(#FFFFFF);
+  rect(170,155,60,60);
+  fill(#bcbfc1);
+  ellipse(180,230,20,20);
+  ellipse(220,230,20,20);
+  triangle(170,235,172,245,174,240);
+  triangle(178,240,180,245,182,240);
+  triangle(186,240,189,245,191,235);
+  triangle(210,235,212,245,214,240);
+  triangle(218,240,220,245,222,240);
+  triangle(226,240,228,245,230,235);
+  rect(120,150,45,20);
+  ellipse(120,160,20,20);
+  fill (#32C653);
+  ellipse(110,160,20,30);
+  fill(0,0,0);
+  line(102,150,117,150);
+  line(100,160,120,160);
+  line(102,170,117,170);
+  fill(#5D3C40);
+  rect(275,0,20,400);
+  rect(125,0,150,20);
+  fill(#bcbfc1);
+  rect(235,150,40,20);
+  ellipse(280,160,20,20);
+  fill(147,58,22);
+  rect(0,250,400,150);
+}
+
+
+public void leaves_draw(float vertical_radius) {
+  for  (int x = 125; x<296; x = x + 30) {
+    ellipse(x,20,20,vertical_radius);
+  }
+}
+
+public void draw() {
+  int y = arduino.analogRead(5);
+  background (#A7E8FF);
+  koala_draw();  
+  mouth_draw(y/100);
+  fill (#32C653);
+  if (y > 100) {
+    fill (#E5B243);
+  } else { 
+    fill (#32C653);
+  }
+  
+  leaves_draw(30+y/20);
+  System.out.println(y);
+}
